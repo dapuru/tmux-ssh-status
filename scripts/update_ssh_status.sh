@@ -9,10 +9,13 @@ ssh_reset_option_name='@reset_window_name'
 
 update_ssh_info() {
   local -r ssh_commad=$(ps -t "$(tmux display -p '#{pane_tty}')" -o command= | awk '/^ssh/')
-  local -r parsed_data=($(echo $ssh_commad | perl -pe 's|^ssh\s(-l\s)?(\w+)@?\s?([[:alnum:][:punct:]]+).*$|\2 \3|g'))
-
-  local -r username="${parsed_data[0]}"
-  local -r hostname="${parsed_data[1]}"
+  if [[ $ssh_command == *"@"* ]]; then
+    local -r parsed_data=($(echo $ssh_commad | perl -pe 's|^ssh\s(-l\s)?(\w+)@?\s?([[:alnum:][:punct:]]+).*$|\2 \3|g'))
+    local -r username="${parsed_data[0]}"
+    local -r hostname="${parsed_data[1]}"
+  else
+    local -r hostname="${ssh_command:4}"
+  fi
 
   local -r auto_rename_window=$(get_tmux_option "@ssh_auto_rename_window" "$ssh_auto_rename_window_default")
 
