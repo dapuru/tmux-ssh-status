@@ -1,6 +1,7 @@
 tmux-ssh-status
 ===============
 
+tbd
 Displays ssh username and hostname in tmux status-right and renames window to hostname.
 
 ### Usage
