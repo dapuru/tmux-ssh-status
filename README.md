@@ -1,7 +1,7 @@
 tmux-ssh-status
 ===============
 
-tbd
+This is a fork of obxhdx/tmux-ssh-status to kepp control of the source.
 Displays ssh username and hostname in tmux status-right and renames window to hostname.
 
 ### Usage
@@ -22,7 +22,7 @@ By default, this plugin will also rename the window to the hostname of the ssh s
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
-    set -g @plugin 'obxhdx/tmux-ssh-status'
+    set -g @plugin 'dapuru/tmux-ssh-status'
 
 Hit `prefix + I` to fetch the plugin and source it.
 
@@ -32,7 +32,7 @@ If format strings are added to `status-right` (or `status-left`), they should no
 
 Clone the repo:
 
-    $ git clone https://github.com/obxhdx/tmux-ssh-status ~/clone/path
+    $ git clone https://github.com/dapuru/tmux-ssh-status ~/clone/path
 
 Add this line to the bottom of `.tmux.conf`:
 
