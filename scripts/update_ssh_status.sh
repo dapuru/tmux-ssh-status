@@ -4,7 +4,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/helpers.sh"
 
-ssh_auto_rename_window_default='on'
+ssh_auto_rename_window_default='off'
 ssh_reset_option_name='@reset_window_name'
 
 update_ssh_info() {
