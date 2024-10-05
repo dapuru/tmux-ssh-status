@@ -49,6 +49,13 @@ If format strings are added to `status-right` (or `status-left`), they should no
 
 The time taken to update the status bar will take into account the `status-interval` tmux option. Therefore, you can expect some delay once you move in/out a window where a given ssh connection is active.
 
+### General tmux resources
+
+https://markmcb.com/cli/tmux-zsh-fzf-ui/
+https://github.com/rothgar/awesome-tmux
+https://leanpub.com/the-tao-of-tmux
+https://qmacro.org/blog/posts/2023/11/13/tmux-plugin-development-with-a-local-repo/
+
 ### License
 
 [MIT](LICENSE.md)
