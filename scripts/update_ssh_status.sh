@@ -12,7 +12,7 @@ update_ssh_info() {
   local -r parsed_data=($(echo $ssh_commad | perl -pe 's|^ssh\s(-l\s)?(\w+)@?\s?([[:alnum:][:punct:]]+).*$|\2 \3|g'))
 
   local -r username="${parsed_data[0]}"
-  local -r hostname=" ${parsed_data[1]} "
+  local -r hostname="${parsed_data[1]}"
 
   local -r auto_rename_window=$(get_tmux_option "@ssh_auto_rename_window" "$ssh_auto_rename_window_default")
 
@@ -25,7 +25,7 @@ update_ssh_info() {
   fi
 
   if [[ -n "$hostname" && -n "$username" ]]; then
-    printf "$username@$hostname"
+    printf " $username@$hostname "
   else
     printf ""
   fi
